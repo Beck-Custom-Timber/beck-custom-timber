@@ -105,6 +105,52 @@
         <h2 style="border:none; padding:0; margin-bottom:10px;">Retail &amp; Wholesale Accounts</h2>
         <p style="margin:0;">We are currently establishing distribution pipelines and supplying premium stock to Australian retail partners and commercial firms. Contact our team to discuss customized supply pricing, scheduling, and specialized bulk run configurations.</p>
     </section>
+    <!-- Interactive Workshop Message Board -->
+<section style="background: var(--white); border-radius: 4px; box-shadow: 0 4px 12px rgba(0,0,0,0.05); margin-top: 40px; padding: 30px;">
+    <h2 style="font-family: 'Georgia', serif; color: #111111; border-bottom: 1px solid #d9c5b2; padding-bottom: 10px; margin-top: 0; font-size: 1.8rem;">Workshop Message Board</h2>
+    <p style="font-family: 'Segoe UI', sans-serif; font-size: 0.95rem; color: #555555; margin-bottom: 25px;">
+        Leave a note for the workshop team, share project feedback, or see what other clients are saying about our recent custom timber builds across the Riverina.
+    </p>
+
+    <!-- Public Message Board Grid Display -->
+    <div style="display: flex; flex-direction: column; gap: 15px; margin-bottom: 30px;" id="message-board-feed">
+        <!-- Sample Entry 1 -->
+        <div style="background: #faf8f5; border-left: 4px solid var(--timber-mid); padding: 15px 20px; border-radius: 4px;">
+            <div style="display: flex; justify-content: space-between; font-family: 'Segoe UI', sans-serif; font-size: 0.85rem; color: #777777; margin-bottom: 5px;">
+                <strong>Mick R. (Wagga Wagga)</strong>
+                <span>Verified Client</span>
+            </div>
+            <p style="margin: 0; font-size: 0.95rem; font-style: italic; color: var(--text-main);">
+                "The dressing work BCT did on our rough-sawn Red Gum slabs was absolutely exceptional. Perfectly flat, true to thickness, and ready for oiling. Highly recommended."
+            </p>
+        </div>
+
+        <!-- Sample Entry 2 -->
+        <div style="background: #faf8f5; border-left: 4px solid var(--timber-mid); padding: 15px 20px; border-radius: 4px;">
+            <div style="display: flex; justify-content: space-between; font-family: 'Segoe UI', sans-serif; font-size: 0.85rem; color: #777777; margin-bottom: 5px;">
+                <strong>Sarah & Dave (Galore)</strong>
+                <span>Bespoke Commission</span>
+            </div>
+            <p style="margin: 0; font-size: 0.95rem; font-style: italic; color: var(--text-main);">
+                "Our custom circular dining table is the centerpiece of our home. The grain profiling is pure artistry."
+            </p>
+        </div>
+    </div>
+
+    <!-- Quick Post Form -->
+    <div style="background: #efeae2; padding: 20px; border-radius: 4px;">
+        <h4 style="margin: 0 0 15px 0; font-family: 'Georgia', serif; color: var(--timber-mid); font-size: 1.1rem;">Post to the Board</h4>
+        <form id="board-post-form" style="display: flex; flex-wrap: wrap; gap: 15px;" onsubmit="event.preventDefault(); alert('Thanks! Your comment has been submitted to the workshop moderator.');">
+            <input type="text" placeholder="Your Name or Business" style="flex: 1; min-width: 200px; padding: 10px; font-size: 0.9rem;" required>
+            <input type="text" placeholder="Location (e.g., Albury, NSW)" style="flex: 1; min-width: 200px; padding: 10px; font-size: 0.9rem;">
+            <textarea placeholder="Write your message or project note here..." rows="3" style="width: 100%; padding: 10px; font-size: 0.9rem; resize: vertical;" required></textarea>
+            <button type="submit" style="background-color: var(--timber-mid); color: var(--white); border: none; cursor: pointer; padding: 10px 20px; font-weight: bold; font-size: 0.85rem; border-radius: 4px; text-transform: uppercase; margin-left: auto;">
+                Submit Post
+            </button>
+        </form>
+    </div>
+</section>
+
     <section>
         <h2>Our Workshop &amp; Contact</h2>
         <div class="contact-layout">
