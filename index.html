@@ -57,6 +57,12 @@
             margin: 0 auto;
         }
 
+        .logo-container img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+
         header h1 {
             margin: 0; 
             font-size: 1.6rem; 
@@ -91,7 +97,7 @@
             margin-top: 0;
             font-size: 1.8rem;
         }
-          .hero-container {
+        .hero-container {
             max-width: 950px;
             margin: 20px auto;
             background: var(--white);
@@ -103,17 +109,14 @@
 
         .hero-image-wrapper {
             width: 100%;
-            height: auto;
-            min-height: 450px;
+            height: 580px;
             background-color: #111111;
-            position: relative;
-            display: block;
+            overflow: hidden;
         }
 
         .hero-image-wrapper img {
             width: 100%;
             height: 100%;
-            max-height: 580px;
             object-fit: cover;
             display: block;
         }
@@ -158,6 +161,30 @@
             color: #111111;
             display: block;
             margin-bottom: 8px;
+        }
+
+        .gallery-grid {
+            display: flex;
+            gap: 20px;
+            flex-wrap: wrap;
+            margin-top: 20px;
+        }
+
+        .gallery-item {
+            flex: 1;
+            min-width: 260px;
+            height: 250px;
+            overflow: hidden;
+            border-radius: 4px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+            background-color: #efeae2;
+        }
+
+        .gallery-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
         }
 
         .highlight-box {
@@ -343,10 +370,10 @@
             margin: 5px 0;
         }
 
-        /* Fluid Mobile Breakpoints */
+        /* Responsive Layout Engine Engine Breakpoints */
         @media (max-width: 700px) {
             .hero-image-wrapper {
-                min-height: 260px;
+                height: 320px;
             }
 
             section {
@@ -364,20 +391,17 @@
         }
     </style>
 </head>
-      
-<<body>
+<body>
 <header>
     <div class="logo-container">
-        <img src="logo.png" alt="Beck Custom Timber Logo" style="max-width: 100%; height: auto;" onerror="this.style.display='none'; document.getElementById('text-logo').style.display='block';">
+        <img src="logo.png" alt="Beck Custom Timber Logo" onerror="this.style.display='none'; document.getElementById('text-logo').style.display='block';">
         <h1 id="text-logo" style="margin: 0; font-size: 1.6rem; letter-spacing: 1px; display: none;">BECK CUSTOM TIMBER</h1>
     </div>
     <p>Manufacturing, Furniture &amp; Machining | Riverina NSW</p>
 </header>
 <main>
     <div class="hero-container">
-        <div class="hero-image-wrapper">
-            <img src="hero-table.jpg" alt="Beck Custom Timber Round Hardwood Table">
-        </div>
+        <div class="hero-image-wrapper"><img src="hero-table.jpg" alt="Beck Custom Timber Round Hardwood Table"></div>
         <div class="hero-caption">
             <h3>Precision Architectural Machining &amp; Custom Furniture</h3>
             <p>Galore, Riverina NSW</p>
@@ -386,23 +410,9 @@
     <section>
         <h2>Our Specialisations</h2>
         <div class="grid">
-            <div class="grid-item"><strong>Architectural Machining</strong> Precision timber machining tailored for structural design accents.</div>
+            <div class="grid-item"><strong>Architectural Machining</strong> Precision timber machining tailored for structural design accents and joinery.</div>
             <div class="grid-item"><strong>Custom Furniture</strong> Bespoke, handcrafted hardwood tables and unique furniture pieces.</div>
-            <div class="grid-item"><strong>Premium Manufacturing</strong> High-standard custom timber operations serving builders.</div>
-        </div>
-    </section>
-    <section>
-        <div class="highlight-box">
-            <h2>Craftsmanship &amp; Precision</h2>
-            <p>Operating out of Galore in the Riverina region of NSW, transforming raw timber into structural elements and furnishings.</p>
-        </div>
-    </section>
-    <section>
-        <h2>Our Featured Projects</h2>
-        <div class="grid">
-            <div class="grid-item" style="padding: 0; overflow: hidden; height: 260px;"><img src="project1.jpg" alt="Project 1" style="width: 100%; height: 100%; object-fit: cover; display: block;"></div>
-            <div class="grid-item" style="padding: 0; overflow: hidden; height: 260px;"><img src="project2.jpg" alt="Project 2" style="width: 100%; height: 100%; object-fit: cover; display: block;"></div>
-            <div class="grid-item" style="padding: 0; overflow: hidden; height: 260px;"><img src="project3.jpg" alt="Project 3" style="width: 100%; height: 100%; object-fit: cover; display: block;"></div>
+            <div class="grid-item"><strong>Premium Manufacturing</strong> High-standard custom timber operations for residential and commercial needs.</div>
         </div>
     </section>
 </main>
