@@ -309,7 +309,7 @@
             cursor: not-allowed;
         }
 
-        /* Formspree AJAX Notification Styles */
+          /* Formspree AJAX Notification Styles */
         [data-fs-success], [data-fs-error] {
             display: none;
             padding: 15px;
@@ -382,22 +382,19 @@
         }
     </style>
 </head>
-
 <body>
 
 <header>
     <div class="logo-container">
-        <!-- Replace this placeholder text with your actual logo image tag if you have one, e.g., <img src="logo.png" alt="Beck Custom Timber"> -->
-        <h1 style="margin:0; font-size:1.6rem; letter-spacing:1px;">BECK CUSTOM TIMBER</h1>
+        <h1 style="margin: 0; font-size: 1.6rem; letter-spacing: 1px;">BECK CUSTOM TIMBER</h1>
     </div>
     <p>Manufacturing, Furniture &amp; Machining | Riverina NSW</p>
 </header>
 
 <main>
-    <!-- Hero Image Banner Section -->
+    <!-- Hero Image Banner -->
     <div class="hero-container">
         <div class="hero-image-wrapper">
-            <!-- Grounded to your live hero table image asset -->
             <img src="https://beckcustomtimber.com.au" alt="Beck Custom Timber Crafted Round Table">
         </div>
         <div class="hero-caption">
@@ -406,7 +403,7 @@
         </div>
     </div>
 
-    <!-- Core Services Grid Section -->
+    <!-- Core Services Grid -->
     <section>
         <h2>Our Specialisations</h2>
         <div class="grid">
@@ -425,7 +422,7 @@
         </div>
     </section>
 
-    <!-- Detailed Highlights Box -->
+    <!-- Highlights Box -->
     <section>
         <div class="highlight-box">
             <h2>Craftsmanship &amp; Precision</h2>
@@ -433,7 +430,7 @@
         </div>
     </section>
 
-    <!-- Contact Form & Business Details Section -->
+    <!-- Contact Form & Business Details -->
     <section id="contact">
         <h2>Get in Touch</h2>
         <div class="contact-layout">
@@ -447,23 +444,22 @@
                 </ul>
 
                 <div class="social-links">
-                    <a href="#" class="social-btn fb-btn" target="_blank">Connect on Facebook</a>
-                    <a href="#" class="social-btn ig-btn" target="_blank">Follow on Instagram</a>
+                    <a href="https://www.facebook.com/people/Beck-Custom-Timber/61580655604578/" class="social-btn fb-btn" target="_blank">Connect on Facebook</a>
+                    <a href="https://instagram.com" class="social-btn ig-btn" target="_blank">Follow on Instagram</a>
                 </div>
 
-                <!-- Google Maps Interactive Placeholder Frame -->
+                <!-- Google Maps Embed Frame -->
                 <div class="map-wrapper">
                     <iframe src="https://google.com" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
                 </div>
             </div>
 
-            <!-- AJAX Formspree Contact Handling Form -->
+            <!-- Formspree Contact Form -->
             <form id="contact-form" action="https://formspree.io" method="POST">
                 <input type="text" name="name" placeholder="Your Name" required aria-required="true">
                 <input type="email" name="email" placeholder="Your Email Address" required aria-required="true">
                 <textarea name="message" placeholder="Describe your machining or custom furniture requirements..." required aria-required="true"></textarea>
                 
-                <!-- Formspree Integration Message Windows -->
                 <div data-fs-success>Thanks! Your message has been sent successfully.</div>
                 <div data-fs-error>Oops! There was a problem submitting your form.</div>
                 
@@ -478,26 +474,23 @@
     <p>Premium Architectural Timber Machining &amp; Joinery | Galore, Riverina NSW</p>
 </footer>
 
-<!-- Clean Form Execution Submission Handling Logic Script -->
 <script>
     const form = document.getElementById('contact-form');
     if (form) {
-        form.addEventListener('submit', async function(e) {
+        form.addEventListener('submit', function(e) {
             const successMsg = form.querySelector('[data-fs-success]');
             const errorMsg = form.querySelector('[data-fs-error]');
-            const btn = form.querySelector('button');
             
-            // Basic verification to clear old warnings
             if(successMsg) successMsg.removeAttribute('data-fs-active');
             if(errorMsg) errorMsg.removeAttribute('data-fs-active');
 
             if (form.action.includes('YOUR_FORMSPREE_ID_HERE')) {
                 e.preventDefault();
-                alert('Please configure your Formspree backend endpoint account ID in the form action attribute.');
-                return;
+                alert('Please update the form action configuration with your actual Formspree endpoint string.');
             }
         });
     }
 </script>
 </body>
 </html>
+      
