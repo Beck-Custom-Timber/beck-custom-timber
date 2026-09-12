@@ -401,7 +401,9 @@
 </header>
 <main>
     <div class="hero-container">
-        <div class="hero-image-wrapper"><img src="hero-table.jpg" alt="Beck Custom Timber Round Hardwood Table"></div>
+        <div class="hero-image-wrapper">
+            <img src="hero-table.jpg" alt="Beck Custom Timber Round Hardwood Table">
+        </div>
         <div class="hero-caption">
             <h3>Precision Architectural Machining &amp; Custom Furniture</h3>
             <p>Galore, Riverina NSW</p>
@@ -410,9 +412,39 @@
     <section>
         <h2>Our Specialisations</h2>
         <div class="grid">
-            <div class="grid-item"><strong>Architectural Machining</strong> Precision timber machining tailored for structural design accents and joinery.</div>
-            <div class="grid-item"><strong>Custom Furniture</strong> Bespoke, handcrafted hardwood tables and unique furniture pieces.</div>
-            <div class="grid-item"><strong>Premium Manufacturing</strong> High-standard custom timber operations for residential and commercial needs.</div>
+            <div class="grid-item"><strong>Architectural Machining</strong> Precision timber machining tailored for structural design accents.</div>
+            <div class="grid-item"><strong>Custom Furniture</strong> Bespoke, handcrafted hardwood tables.</div>
+            <div class="grid-item"><strong>Premium Manufacturing</strong> High-standard custom timber operations.</div>
+        </div>
+    </section>
+    <section id="portfolio">
+        <h2>Our Featured Projects</h2>
+        <div class="gallery-grid">
+            <div class="gallery-item"><img src="project1.jpg" alt="Project 1"></div>
+            <div class="gallery-item"><img src="project2.jpg" alt="Project 2"></div>
+            <div class="gallery-item"><img src="project3.jpg" alt="Project 3"></div>
+        </div>
+    </section>
+    <section id="contact">
+        <h2>Get in Touch</h2>
+        <div class="contact-layout">
+            <div class="contact-info">
+                <h3>Beck Custom Timber</h3>
+                <p>Discuss your upcoming precision machining profile runs or custom furniture commissions.</p>
+                <div class="social-links">
+                    <a href="https://facebook.com" class="social-btn fb-btn" target="_blank" rel="noopener">Facebook</a>
+                    <a href="https://instagram.com" class="social-btn ig-btn" target="_blank" rel="noopener">Instagram</a>
+                </div>
+                <div class="map-wrapper">
+                    <iframe src="https://google.com" allowfullscreen="" loading="lazy"></iframe>
+                </div>
+            </div>
+            <form id="contact-form" action="https://formspree.io" method="POST">
+                <input type="text" name="name" placeholder="Your Name" required>
+                <input type="email" name="email" placeholder="Your Email Address" required>
+                <textarea name="message" placeholder="Describe your project goals..." required></textarea>
+                <button type="submit">Submit Request</button>
+            </form>
         </div>
     </section>
 </main>
