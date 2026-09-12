@@ -401,7 +401,6 @@
         </div>
     </div>
 
-    <!-- RESTORED: What We Do section with exact original wording -->
     <section>
         <h2>What We Do</h2>
         <div class="grid">
@@ -414,7 +413,7 @@
                 Handcrafted, bespoke hardwood tables and timber furniture built to last for generations.
             </div>
             <div class="grid-item">
-                <strong>Premium joinery</strong>
+                <strong>premium joinery</strong>
                 High-quality commercial and residential timber component manufacturing with strict quality standards.
             </div>
         </div>
@@ -464,14 +463,14 @@
                 </div>
             </div>
 
-            <form id="contact-form" action="https://formspree.io/f/mkjnpkpr" method="POST">
-
+            <!-- SECURE FORM ACTION URL -->
+            <form id="contact-form" action="https://formspree.io" method="POST">
                 <input type="text" name="name" placeholder="Your Name" required aria-required="true">
                 <input type="email" name="email" placeholder="Your Email Address" required aria-required="true">
                 <textarea name="message" placeholder="Describe your machining or custom furniture requirements..." required aria-required="true"></textarea>
                 
-                <div data-fs-success>Thanks! Your message has been sent successfully.</div>
-                <div data-fs-error>Oops! There was a problem submitting your form.</div>
+                <div id="form-success-msg" style="display: none; background-color: #e8f5e9; color: #2e7d32; padding: 15px; border-radius: 4px; border: 1px solid #a5d6a7; font-family: 'Segoe UI', sans-serif; font-weight: bold; margin-bottom: 10px;">Thanks! Your message has been sent successfully.</div>
+                <div id="form-error-msg" style="display: none; background-color: #ffebee; color: #c62828; padding: 15px; border-radius: 4px; border: 1px solid #ef9a9a; font-family: 'Segoe UI', sans-serif; font-weight: bold; margin-bottom: 10px;">Oops! There was a problem submitting your form.</div>
                 
                 <button type="submit">Submit Request</button>
             </form>
@@ -484,19 +483,39 @@
     <p>Premium Architectural Timber Machining &amp; Joinery | Galore, Riverina NSW</p>
 </footer>
 
+<!-- NEW SECURE SUBMISSION HANDLER -->
 <script>
     const form = document.getElementById('contact-form');
     if (form) {
-        form.addEventListener('submit', function(e) {
-            const successMsg = form.querySelector('[data-fs-success]');
-            const errorMsg = form.querySelector('[data-fs-error]');
+        form.addEventListener('submit', async function(e) {
+            e.preventDefault();
+            const successMsg = document.getElementById('form-success-msg');
+            const errorMsg = document.getElementById('form-error-msg');
+            const button = form.querySelector('button');
             
-            if(successMsg) successMsg.removeAttribute('data-fs-active');
-            if(errorMsg) errorMsg.removeAttribute('data-fs-active');
+            successMsg.style.display = 'none';
+            errorMsg.style.display = 'none';
+            button.disabled = true;
+            button.innerText = 'Sending...';
 
-            if (form.action.includes('YOUR_FORMSPREE_ID_HERE')) {
-                e.preventDefault();
-                alert('All site elements fully active! Remember to insert your Formspree key string to link form delivery when pushing to production.');
+            const data = new FormData(form);
+            try {
+                const response = await fetch(form.action, {
+                    method: 'POST',
+                    body: data,
+                    headers: { 'Accept': 'application/json' }
+                });
+                if (response.ok) {
+                    successMsg.style.display = 'block';
+                    form.reset();
+                } else {
+                    errorMsg.style.display = 'block';
+                }
+            } catch (error) {
+                errorMsg.style.display = 'block';
+            } finally {
+                button.disabled = false;
+                button.innerText = 'Submit Request';
             }
         });
     }
