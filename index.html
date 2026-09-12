@@ -63,14 +63,6 @@
             display: block;
         }
 
-        header h1 {
-            margin: 0; 
-            font-size: 1.6rem; 
-            letter-spacing: 1px;
-            color: var(--white);
-            font-family: Georgia, serif;
-        }
-
         header p {
             margin: 12px 0 0;
             font-size: 0.75rem;
@@ -97,6 +89,7 @@
             margin-top: 0;
             font-size: 1.8rem;
         }
+
         .hero-container {
             max-width: 950px;
             margin: 20px auto;
@@ -104,7 +97,6 @@
             border-radius: 4px;
             box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
             overflow: hidden;
-            width: 100%;
         }
 
         .hero-image-wrapper {
@@ -113,7 +105,6 @@
             background-color: #111111;
             overflow: hidden;
         }
-
         .hero-image-wrapper img {
             width: 100%;
             height: 100%;
@@ -370,7 +361,6 @@
             margin: 5px 0;
         }
 
-        /* Responsive Layout Engine Engine Breakpoints */
         @media (max-width: 700px) {
             .hero-image-wrapper {
                 height: 320px;
@@ -392,64 +382,122 @@
     </style>
 </head>
 <body>
+
 <header>
     <div class="logo-container">
-        <img src="logo.png" alt="Beck Custom Timber Logo" onerror="this.style.display='none'; document.getElementById('text-logo').style.display='block';">
-        <h1 id="text-logo" style="margin: 0; font-size: 1.6rem; letter-spacing: 1px; display: none;">BECK CUSTOM TIMBER</h1>
+        <img src="logo.png" alt="Beck Custom Timber Logo">
     </div>
     <p>Manufacturing, Furniture &amp; Machining | Riverina NSW</p>
 </header>
+
 <main>
     <div class="hero-container">
         <div class="hero-image-wrapper">
-            <img src="hero-table.jpg" alt="Beck Custom Timber Round Hardwood Table">
+            <img src="hero-table.jpg" alt="Beck Custom Timber Crafted Round Table">
         </div>
         <div class="hero-caption">
             <h3>Precision Architectural Machining &amp; Custom Furniture</h3>
             <p>Galore, Riverina NSW</p>
         </div>
     </div>
+
     <section>
         <h2>Our Specialisations</h2>
         <div class="grid">
-            <div class="grid-item"><strong>Architectural Machining</strong> Precision timber machining tailored for structural design accents.</div>
-            <div class="grid-item"><strong>Custom Furniture</strong> Bespoke, handcrafted hardwood tables.</div>
-            <div class="grid-item"><strong>Premium Manufacturing</strong> High-standard custom timber operations.</div>
+            <div class="grid-item">
+                <strong>Architectural Machining</strong>
+                Precision timber machining tailored for architectural builds, structural features, and premium joinery.
+            </div>
+            <div class="grid-item">
+                <strong>Custom Furniture</strong>
+                Handcrafted, bespoke hardwood tables and timber furniture built to last for generations.
+            </div>
+            <div class="grid-item">
+                <strong>Premium Manufacturing</strong>
+                High-quality commercial and residential timber component manufacturing with strict quality standards.
+            </div>
         </div>
     </section>
+
+    <section>
+        <div class="highlight-box">
+            <h2>Craftsmanship &amp; Precision</h2>
+            <p>Based in Galore within the Riverina region of New South Wales, we specialize in transforming premium raw timber into architectural masterpieces and durable custom furniture. Every joint, edge, and finish is machined with precision.</p>
+        </div>
+    </section>
+
     <section id="portfolio">
         <h2>Our Featured Projects</h2>
         <div class="gallery-grid">
-            <div class="gallery-item"><img src="project1.jpg" alt="Project 1"></div>
-            <div class="gallery-item"><img src="project2.jpg" alt="Project 2"></div>
-            <div class="gallery-item"><img src="project3.jpg" alt="Project 3"></div>
+            <div class="gallery-item">
+                <img src="project1.jpg" alt="Beck Custom Timber Project Showcase 1">
+            </div>
+            <div class="gallery-item">
+                <img src="project2.jpg" alt="Beck Custom Timber Project Showcase 2">
+            </div>
+            <div class="gallery-item">
+                <img src="project3.jpg" alt="Beck Custom Timber Project Showcase 3">
+            </div>
         </div>
     </section>
+
     <section id="contact">
         <h2>Get in Touch</h2>
         <div class="contact-layout">
             <div class="contact-info">
                 <h3>Beck Custom Timber</h3>
-                <p>Discuss your upcoming precision machining profile runs or custom furniture commissions.</p>
+                <p>Discuss your upcoming machining, joinery, or custom furniture project requirements with us.</p>
+                
+                <ul class="contact-details-list">
+                    <li><strong>Location:</strong> Galore, Riverina NSW</li>
+                    <li><strong>Service Area:</strong> Riverina region and architectural projects statewide</li>
+                </ul>
+
                 <div class="social-links">
-                    <a href="https://facebook.com" class="social-btn fb-btn" target="_blank" rel="noopener">Facebook</a>
-                    <a href="https://instagram.com" class="social-btn ig-btn" target="_blank" rel="noopener">Instagram</a>
+                    <a href="https://facebook.com" class="social-btn fb-btn" target="_blank" rel="noopener">Connect on Facebook</a>
+                    <a href="https://instagram.com" class="social-btn ig-btn" target="_blank" rel="noopener">Follow on Instagram</a>
                 </div>
+
                 <div class="map-wrapper">
-                    <iframe src="https://google.com" allowfullscreen="" loading="lazy"></iframe>
+                    <iframe src="https://google.com" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
                 </div>
             </div>
+
             <form id="contact-form" action="https://formspree.io" method="POST">
-                <input type="text" name="name" placeholder="Your Name" required>
-                <input type="email" name="email" placeholder="Your Email Address" required>
-                <textarea name="message" placeholder="Describe your project goals..." required></textarea>
+                <input type="text" name="name" placeholder="Your Name" required aria-required="true">
+                <input type="email" name="email" placeholder="Your Email Address" required aria-required="true">
+                <textarea name="message" placeholder="Describe your machining or custom furniture requirements..." required aria-required="true"></textarea>
+                
+                <div data-fs-success>Thanks! Your message has been sent successfully.</div>
+                <div data-fs-error>Oops! There was a problem submitting your form.</div>
+                
                 <button type="submit">Submit Request</button>
             </form>
         </div>
     </section>
 </main>
+
 <footer>
     <p>&copy; 2026 Beck Custom Timber. All Rights Reserved.</p>
+    <p>Premium Architectural Timber Machining &amp; Joinery | Galore, Riverina NSW</p>
 </footer>
+
+<script>
+    const form = document.getElementById('contact-form');
+    if (form) {
+        form.addEventListener('submit', function(e) {
+            const successMsg = form.querySelector('[data-fs-success]');
+            const errorMsg = form.querySelector('[data-fs-error]');
+            
+            if(successMsg) successMsg.removeAttribute('data-fs-active');
+            if(errorMsg) errorMsg.removeAttribute('data-fs-active');
+
+            if (form.action.includes('YOUR_FORMSPREE_ID_HERE')) {
+                e.preventDefault();
+                alert('All site elements fully active! Remember to insert your Formspree key string to link form delivery when pushing to production.');
+            }
+        });
+    }
+</script>
 </body>
 </html>
