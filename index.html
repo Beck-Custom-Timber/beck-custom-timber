@@ -11,15 +11,15 @@
     <meta property="og:type" content="website">
     <meta property="og:title" content="Beck Custom Timber | Custom Manufacturing &amp; Furniture Riverina">
     <meta property="og:description" content="Precision architectural timber machining, custom furniture manufacturing, and premium joinery in Galore, Riverina NSW.">
-    <meta property="og:url" content="https://beckcustomtimber.com.au">
-    <meta property="og:image" content="https://beckcustomtimber.com.au">
+    <meta property="og:url" content="https://beckcustomtimber.com.au/hero-table.jpg">
+    <meta property="og:image" content="https://beckcustomtimber.com.au/hero-table.jpg">
     <meta property="og:site_name" content="Beck Custom Timber">
 
     <!-- Twitter / X -->
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="Beck Custom Timber | Custom Manufacturing &amp; Furniture">
     <meta name="twitter:description" content="Precision architectural timber machining and custom furniture manufacturing in Riverina NSW.">
-    <meta name="twitter:image" content="https://beckcustomtimber.com.au">
+    <meta name="twitter:image" content="https://beckcustomtimber.com.au/hero-table.jpg">
 
     <style>
         :root {
@@ -454,12 +454,12 @@
                 </ul>
 
                 <div class="social-links">
-                    <a href="https://facebook.com" class="social-btn fb-btn" target="_blank" rel="noopener">Connect on Facebook</a>
-                    <a href="https://instagram.com" class="social-btn ig-btn" target="_blank" rel="noopener">Follow on Instagram</a>
+                    <a href="https://www.facebook.com/profile.php?id=61580655604578" class="social-btn fb-btn" target="_blank" rel="noopener">Connect on Facebook</a>
+                    <a href="https://www.instagram.com/beckcustomtimber/" class="social-btn ig-btn" target="_blank" rel="noopener">Follow on Instagram</a>
                 </div>
 
                 <div class="map-wrapper">
-                    <iframe src="https://google.com" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                    <iframe src="https://www.google.com/maps?q=Galore%2C%20NSW%202650&output=embed" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" title="Map showing Beck Custom Timber in Galore, Riverina NSW"></iframe>
                 </div>
             </div>
 
@@ -469,6 +469,11 @@
                 <input type="email" name="email" placeholder="Your Email Address" required aria-required="true">
                 <textarea name="message" placeholder="Describe your machining or custom furniture requirements..." required aria-required="true"></textarea>
                 
+                <div data-fs-success aria-live="polite">
+                    Thanks — your request has been sent successfully. We’ll be in touch as soon as possible.
+                </div>
+                <div data-fs-error aria-live="assertive"></div>
+
                 <button type="submit">Submit Request</button>
             </form>
         </div>
@@ -479,6 +484,60 @@
     <p>&copy; 2026 Beck Custom Timber. All Rights Reserved.</p>
     <p>Premium Architectural Timber Machining &amp; Joinery | Galore, Riverina NSW</p>
 </footer>
+
+
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+    const form = document.getElementById("contact-form");
+    if (!form) return;
+
+    const button = form.querySelector('button[type="submit"]');
+    const successMessage = form.querySelector("[data-fs-success]");
+    const errorMessage = form.querySelector("[data-fs-error]");
+
+    form.addEventListener("submit", async function (event) {
+        event.preventDefault();
+
+        successMessage.removeAttribute("data-fs-active");
+        errorMessage.removeAttribute("data-fs-active");
+        errorMessage.textContent = "";
+
+        button.disabled = true;
+        const originalText = button.textContent;
+        button.textContent = "Sending...";
+
+        try {
+            const response = await fetch(form.action, {
+                method: "POST",
+                body: new FormData(form),
+                headers: { "Accept": "application/json" }
+            });
+
+            if (response.ok) {
+                form.reset();
+                successMessage.setAttribute("data-fs-active", "");
+            } else {
+                let message = "Sorry, we couldn't send your request. Please try again or contact us directly.";
+                try {
+                    const data = await response.json();
+                    if (data && data.errors && data.errors.length) {
+                        message = data.errors.map(error => error.message).join(" ");
+                    }
+                } catch (_) {}
+                errorMessage.textContent = message;
+                errorMessage.setAttribute("data-fs-active", "");
+            }
+        } catch (_) {
+            errorMessage.textContent =
+                "Sorry, there was a connection problem. Please check your internet connection and try again.";
+            errorMessage.setAttribute("data-fs-active", "");
+        } finally {
+            button.disabled = false;
+            button.textContent = originalText;
+        }
+    });
+});
+</script>
 
 </body>
 </html>
